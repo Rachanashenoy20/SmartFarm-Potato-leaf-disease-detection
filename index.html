@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potato Leaf Classifier</title>
+    <style>
+        body {
+            background: url("static/imgnat.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            font-size: 48px;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 70px;
+        }
+
+        .scan-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .scan-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Potato Leaf Classifier</h1>
+    <div class="btn-container">
+        <button class="scan-btn" onclick="redirectToUpload()">Scan Your Leaf</button>
+    </div>
+<script>
+        function redirectToUpload() {
+            window.location.href = "/upload";
+        }
+    </script>
+</body>
+</html>
