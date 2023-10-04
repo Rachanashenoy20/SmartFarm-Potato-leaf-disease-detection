@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potato Leaf Classifier - Result</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #C7F2E8; /* Set the desired background color */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 24px;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            text-align: left;
+        }
+
+        .back-btn a {
+            color: #000000;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn a:hover {
+            color: #45a049;
+        }
+
+        .additional-info {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .additional-info h2 {
+            color: #333;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .additional-info p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .additional-info ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .tip {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Potato Leaf Classifier - Result</h1>
+        <div class="result">
+            <p>{{ prediction }}</p>
+        </div>
+        {% if prediction == "Potato early blight" %}
+            <div class="additional-info">
+                <h2>Curing Tips</h2>
+                <p>To cure Potato Early Blight, follow these recommendations:</p>
+                <ul>
+                    <li class="tip">Tip 1: Remove and destroy infected leaves, stems, and fruits immediately.</li>
+                    <li class="tip">Tip 2: Apply a copper-based fungicide on the plant surfaces.</li>
+                    <li class="tip">Tip 3: Avoid overhead watering and irrigate at the base of the plant to reduce humidity.</li>
+                    <li class="tip">Tip 4: Practice crop rotation to prevent the disease from spreading to new plants.</li>
+                    <li class="tip">Tip 5: Monitor the plants regularly and take action at the first signs of infection.</li>
+                </ul>
+            </div>
+        {% elif prediction == "Potato late blight" %}
+            <div class="additional-info">
+                <h2>Curing Tips</h2>
+                <p>To cure Potato Late Blight, follow these recommendations:</p>
+                <ul>
+                    <li class="tip">Tip 1: Remove and destroy infected leaves, stems, and fruits immediately.</li>
+                    <li class="tip">Tip 2: Apply a fungicide containing chlorothalonil or mancozeb to protect the plants.</li>
+                    <li class="tip">Tip 3: Increase airflow and reduce humidity around the plants by spacing them adequately.</li>
+                    <li class="tip">Tip 4: Avoid overhead irrigation and water the plants at the base.</li>
+                    <li class="tip">Tip 5: Practice crop rotation and avoid planting potatoes in the same location consecutively.</li>
+                </ul>
+            </div>
+        {% elif prediction == "Potato healthy" %}
+            <div class="additional-info">
+                <p>The leaves are healthy. Maintain the plants in the same manner.</p>
+            </div>
+        {% endif %}
+        <div class="back-btn">
+            <a href="/upload">&lt; Back</a>
+        </div>
+    </div>
+</body>
+</html>
